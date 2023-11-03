@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .main-logo-half-translate {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-212px, 0%);
+  transition: 1s;
+}
+.main-logo-half-translate:hover {
+  transform: rotate(180deg);
+} */
+
+.image-quality-improve {
+  image-rendering: -moz-crisp-edges; /* firefox */
+  image-rendering: -o-crisp-edges; /* opera */
+  image-rendering: -webkit-optimize-contrast; /* chrome(비표준) */
+  image-rendering: crisp-edges;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+.main-logo-rotate-animation {
+  transition: 1s ease-in-out;
+}
+.main-logo-rotate-animation:hover {
+  transform: rotate(180deg);
+}
+.card-skew {
+  perspective: 100px;
+  transition: 1s;
+}
+
+.card-skew:first-child {
+  box-shadow: -52px 38px 32px -22px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -52px 38px 32px -22px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -52px 38px 32px -22px rgba(0, 0, 0, 0.75);
+}
+.card-skew:nth-child(2) {
+  box-shadow: 2px 28px 29px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 28px 29px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 28px 29px 0px rgba(0, 0, 0, 0.75);
+}
+.card-skew:nth-child(3) {
+  box-shadow: 56px 44px 47px -22px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 56px 44px 47px -22px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 56px 44px 47px -22px rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (max-width: 1080px) {
+  .card-skew:first-child {
+    transform: rotateZ(-10deg) rotateX(-20deg) translateX(-30px)
+      translateY(-10px);
+  }
+
+  .card-skew:nth-child(2) {
+    transform: rotateX(-10deg) translateY(-80px);
+  }
+
+  .card-skew:last-child {
+    transform: rotateZ(10deg) rotateX(-20deg) translateX(30px) translateY(-10px);
+  }
+}
+@media screen and (min-width: 1080px) {
+  .card-skew:first-child {
+    transform: rotateZ(-10deg) rotateX(-20deg) translateY(-10px);
+  }
+
+  .card-skew:nth-child(2) {
+    transform: rotateX(-10deg) translateY(-80px);
+    box-shadow: 2px 33px 64px -5px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 33px 64px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 33px 64px -5px rgba(0, 0, 0, 0.75);
+  }
+
+  .card-skew:last-child {
+    transform: rotateZ(10deg) rotateX(-20deg) translateY(-10px);
+  }
+}
