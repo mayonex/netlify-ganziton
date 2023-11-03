@@ -4,7 +4,7 @@ export default function Header() {
       <div>
         <img
           className="image-quality-improve"
-          src="src/img/header-logo.png"
+          src="public/img/header-logo.png"
           alt="바로여기 로고"
         />
       </div>

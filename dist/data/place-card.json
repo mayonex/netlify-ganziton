@@ -1,7 +1,7 @@
 [
   {
     "key": 1,
-    "src": "src/img/main-place-card-1.png",
+    "src": "public/img/main-place-card-1.png",
     "location": "성수",
     "category": "요식업",
     "title": "치즈 다이닝 in 성수",
@@ -10,7 +10,7 @@
   },
   {
     "key": 2,
-    "src": "src/img/main-place-card-2.png",
+    "src": "public/img/main-place-card-2.png",
     "location": "성수",
     "category": "주점",
     "title": "와인 인더스트리",
@@ -19,7 +19,7 @@
   },
   {
     "key": 3,
-    "src": "src/img/main-place-card-3.png",
+    "src": "public/img/main-place-card-3.png",
     "location": "성수",
     "category": "제조업",
     "title": "옐로우 랩",

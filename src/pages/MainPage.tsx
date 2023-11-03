@@ -29,7 +29,7 @@ export default function MainPage() {
             </h1>
             <img
               className="main-logo-rotate-animation"
-              src="src/img/main-logo.png"
+              src="public/img/main-logo.png"
               alt="메인 로고"
             />
           </div>
