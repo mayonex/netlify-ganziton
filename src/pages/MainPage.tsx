@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import MainCard from "../components/MainCard";
 
 export default function MainPage() {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     fetch("public/data/place-card.json")
@@ -43,7 +43,7 @@ export default function MainPage() {
           </div>
           <ul className="mt-60 flex justify-between ">
             {data &&
-              data.map((item) => (
+              data.map((item: any) => (
                 <MainCard
                   key={item.key}
                   src={item.src}
