@@ -1,11 +1,5 @@
-interface MainCardProps {
-  location: string;
-  category: string;
-  title: string;
-  subTitle: string;
-  price: string;
-  src: string;
-}
+import Chip from "./category/Chip";
+import ScrollOut from "scroll-out";
 
 export default function MainCard({
   location,
@@ -14,18 +8,26 @@ export default function MainCard({
   subTitle,
   price,
   src,
-}: MainCardProps) {
+}) {
   return (
-    <li className="max-w-fit border-[1px] border-[#11434A] rounded-lg card-skew">
+    <li className="max-w-fit border-[0.1px] border-[#11434A] rounded-lg card-skew">
       <img className="image-quality-improve " src={src} alt="공유공간 카드" />
       <div className="px-5 py-6">
-        <header className="">
-          <span className="text-xs font-semibold text-[#11434A] bg-[#B6D8DD] border-[1px] border-[#11434A] rounded-lg px-5 py-1">
-            {location}
-          </span>
-          <span className="text-xs font-semibold text-[#DB1A00] ml-2 bg-[#FFCAC3] border-[1px] border-[#DB1A00] rounded-lg px-5 py-1">
-            {category}
-          </span>
+        <header className={`flex gap-1`}>
+          <Chip
+            color={"green"}
+            size={"small"}
+            chipInfo={location}
+            isPicked={true}
+            onClickEvent={null}
+          ></Chip>
+          <Chip
+            color={"red"}
+            size={"small"}
+            chipInfo={category}
+            isPicked={true}
+            onClickEvent={null}
+          ></Chip>
         </header>
         <main className="mt-6">
           <h1 className="text-xl font-bold">{title}</h1>

@@ -2,18 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .main-logo-half-translate {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-212px, 0%);
-  transition: 1s;
+body::-webkit-scrollbar {
+  display: none;
 }
-.main-logo-half-translate:hover {
-  transform: rotate(180deg);
-} */
+body {
+  position: relative;
+  /* height: 100%; */
+}
 
-.image-quality-improve {
+:root {
+  --deep-green-color: #042226;
+  --normal-green-color: #11444a;
+  --light-green-color: #b6d8dd;
+  --deep-red-color: #db1a00;
+  --normal-red-color: #ff6550;
+  --light-red-color: #ffcac3;
+}
+
+img {
   image-rendering: -moz-crisp-edges; /* firefox */
   image-rendering: -o-crisp-edges; /* opera */
   image-rendering: -webkit-optimize-contrast; /* chrome(비표준) */
@@ -21,11 +27,58 @@
   transform: translateZ(0);
   backface-visibility: hidden;
 }
-.main-logo-rotate-animation {
-  transition: 1s ease-in-out;
+
+@keyframes rotate180 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
 }
-.main-logo-rotate-animation:hover {
-  transform: rotate(180deg);
+
+[data-scroll] {
+  opacity: 0;
+  will-change: transform, scale, opacity;
+  transform: translateY(6rem) scale(0.93);
+  transition: all 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-delay: 0.5s;
+}
+
+[data-scroll="in"] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+[data-scroll="out"] {
+  opacity: 0;
+}
+
+.main-logo {
+  animation: rotate180 1s forwards ease-in-out;
+  animation-delay: 1.5s;
+}
+
+.sec-title[data-scroll] {
+  transition-delay: 0.8s;
+}
+.ul-cards[data-scroll] {
+  transition-delay: 1.5s;
+}
+.ul-cards[data-scroll="in"] {
+  transform: translateY(-3rem) scale(1);
+}
+
+.esg[data-scroll] {
+  transition-delay: 0.3s;
+}
+
+.last-main-btn {
+  transition: 0.5s;
+}
+.last-main-btn:hover {
+  border: 1px solid rgb(17, 67, 74);
+  transform: translateY(-0.5rem) scale(1.1);
 }
 .card-skew {
   perspective: 100px;
@@ -77,4 +130,17 @@
   .card-skew:last-child {
     transform: rotateZ(10deg) rotateX(-20deg) translateY(-10px);
   }
+}
+
+.footer {
+  /* position: absolute; */
+  /* bottom: -450px; */
+  /* left: 0; */
+  background: rgb(17, 67, 74);
+  background: linear-gradient(
+    90deg,
+    rgba(17, 67, 74, 1) 0%,
+    rgba(21, 81, 89, 1) 27%,
+    rgba(222, 102, 85, 1) 100%
+  );
 }
