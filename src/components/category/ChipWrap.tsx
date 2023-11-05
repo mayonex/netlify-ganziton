@@ -45,6 +45,7 @@ const ChipWrap = ({ filteringList, type, pickEvent }: props) => {
     <div className={`flex gap-6`}>
       {filteringList.map((category) => (
         <Chip
+          size="small"
           color={type === "business" ? "red" : "green"}
           chipInfo={category}
           isPicked={picked.includes(category)}

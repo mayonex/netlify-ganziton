@@ -6,13 +6,7 @@ interface props {
   onClickEvent: (chipInfo: string) => void;
 }
 
-const Chip = ({
-  color,
-  size = "normal",
-  chipInfo,
-  isPicked,
-  onClickEvent,
-}: props) => {
+const Chip = ({ color, size, chipInfo, isPicked, onClickEvent }: props) => {
   return (
     <div
       className={`flex justify-center items-center border border-solid cursor-pointer font-semibold ${
