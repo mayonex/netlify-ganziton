@@ -4,6 +4,11 @@ const logo = {
   store: "/images/store-logo.png",
 };
 
+const userImg = {
+  user: "/images/header-user-login.png",
+  ceo: "/images/header-ceo-login.png",
+  storeEmpty: "/images/store-empty.png",
+};
 const mainImg = {
   place1: "/images/mainPage/place-1.png",
   place2: "/images/mainPage/place-2.png",
@@ -18,4 +23,14 @@ const mainImg = {
   social: "/images/mainPage/social.png",
 };
 
-export { logo, mainImg };
+const JoinImg = {
+  storeGreen: "/images/joinPage/store-green.png",
+  storeRed: "/images/joinPage/store-red.png",
+};
+
+const DividerImg = {
+  green: "/images/divider-green.png",
+  red: "/images/divider-red.png",
+  vertical: "/images/vertical-divider.png",
+};
+export { logo, userImg, mainImg, JoinImg, DividerImg };

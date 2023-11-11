@@ -13,6 +13,7 @@ export default {
         "my-tree": "#0B733A",
         "my-yellow": "#CD9300",
         "my-purple": "#282085",
+        "my-error": "#FF6550",
       },
     },
     mode: "jit",

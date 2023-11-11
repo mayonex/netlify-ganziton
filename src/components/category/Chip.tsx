@@ -1,12 +1,18 @@
 interface props {
   color: "red" | "green";
-  size: "small" | "normal";
+  size?: "small" | "normal";
   chipInfo: string;
   isPicked: boolean;
-  onClickEvent: (chipInfo: string) => void;
+  onClickEvent?: (chipInfo: string) => void;
 }
 
-const Chip = ({ color, size, chipInfo, isPicked, onClickEvent }: props) => {
+const Chip = ({
+  color,
+  size = "normal",
+  chipInfo,
+  isPicked,
+  onClickEvent,
+}: props) => {
   return (
     <div
       className={`flex justify-center items-center border border-solid cursor-pointer font-semibold ${
@@ -27,7 +33,7 @@ const Chip = ({ color, size, chipInfo, isPicked, onClickEvent }: props) => {
           ? "w-fit min-w-fit text-xs px-5 py-1 rounded-lg"
           : "min-w-[5.875rem] p-2 rounded-xl"
       }`}
-      onClick={() => onClickEvent(chipInfo)}
+      onClick={() => onClickEvent && onClickEvent(chipInfo)}
     >
       {chipInfo}
     </div>

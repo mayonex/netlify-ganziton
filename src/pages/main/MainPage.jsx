@@ -12,6 +12,8 @@ import { Pagination } from "swiper/modules";
 
 import { JSON_PATH } from "../../constants/path";
 import { logo, mainImg } from "../../assets/images";
+import { Link } from "react-router-dom";
+import { useOutletContext } from "../../../node_modules/react-router-dom/dist/index";
 
 export default function MainPage() {
   const [data, setData] = useState();
@@ -28,8 +30,8 @@ export default function MainPage() {
   });
 
   return (
-    <main className="flex-row lg:px-[13%]">
-      <section className="pb-32">
+    <main className="main flex-row lg:px-[13%]">
+      <section className="pb-16 min-h-[100vh]">
         <div data-scroll className="px-10 text-3xl font-bold">
           <h1>가게를 공유하여</h1>
           <h1 className="ml-20 mt-5">함께 성장하세요</h1>
@@ -62,7 +64,7 @@ export default function MainPage() {
           <h1 className="mt-5">시작하는 새로운 사업</h1>
         </div>
       </section>
-      <section className="py-32">
+      <section className="pb-16 min-h-[100vh]">
         <div>
           <div data-scroll className="flex flex-col items-center sec-title">
             <h1 className="text-3xl font-bold">서울 핫플 5개에 위치한</h1>
@@ -86,24 +88,24 @@ export default function MainPage() {
           </ul>
         </div>
       </section>
-      <section className="py-32">
+      <section className="pb-32 min-h-[70vh]">
         <div>
           <div className="px-5">
-            <div className="flex justify-start">
+            <div className="main-dialog flex justify-start">
               <img
                 data-scroll
                 className="w-[580px] lg:w-[680px]"
                 src={mainImg.interview1}
               />
             </div>
-            <div className="flex justify-end my-10">
+            <div className="main-dialog flex justify-end my-10">
               <img
                 data-scroll
                 className=" w-[580px] lg:w-[680px]"
                 src={mainImg.interview2}
               />
             </div>
-            <div className="flex justify-start">
+            <div className="main-dialog flex justify-start">
               <img
                 data-scroll
                 className=" w-[580px] lg:w-[680px]"
@@ -113,7 +115,7 @@ export default function MainPage() {
           </div>
         </div>
       </section>
-      <section className="py-32">
+      <section className="py-16">
         <div className="ml-10 flex items-end">
           <img className="w-[300px]" src={mainImg.provider} />
           <h1 className="ml-5 mb-10 text-3xl font-semiboldtext-my-green">
@@ -162,7 +164,7 @@ export default function MainPage() {
             <span className="">를 위해서</span>
             <span className="ml-2 text-[28px] text-[#11434A]">바로 여기</span>
           </h1>
-          <div className="mflex flex-col">
+          <div className="flex flex-col">
             <img src={mainImg.environment} />
             <p className="px-10 py-12 mt-10 font-medium border-2 border-my-tree rounded-3xl tracking-wide">
               <h1 className="relative left-4 bottom-16 w-[60%] bg-white">
@@ -170,7 +172,7 @@ export default function MainPage() {
                   바로 여기로 지키는 <span className="text-my-tree">환경</span>
                 </h1>
               </h1>
-              <article data-scroll>
+              <article>
                 <p>
                   자영업의 <span className="text-my-tree">폐업률은 80%</span>
                   입니다. 많은 사업의 도전과 폐업이 반복되면서 발생하는
@@ -213,7 +215,7 @@ export default function MainPage() {
                   <span className="text-my-yellow">경제</span>
                 </h1>
               </h1>
-              <article data-scroll>
+              <article>
                 <p>
                   사업자들은{" "}
                   <span className="text-my-yellow">
@@ -248,7 +250,7 @@ export default function MainPage() {
                   <span className="text-my-purple">사회</span>
                 </h1>
               </h1>
-              <article data-scroll>
+              <article>
                 <p>
                   창업 전 자신의 사업 아이템의 반응을 확인할 수 있는 기회를
                   얻기는 쉽지 않습니다.
@@ -273,8 +275,8 @@ export default function MainPage() {
         </div>
       </section>
       <section className="py-16">
-        <div data-scroll className="flex flex-col items-center">
-          <img src={logo.store} />
+        <div className="flex flex-col items-center">
+          <img data-scroll src={logo.store} />
           <h1 className="my-20 text-2xl font-light">
             내가 원하는 공유공간 계약 서비스
           </h1>
@@ -286,7 +288,7 @@ export default function MainPage() {
             <h2 className="ml-28 mt-6">같이 사업해보세요!</h2>
           </h1>
           <div className="last-main-btn my-20 px-12 py-6 border-2 rounded-xl shadow-md text-2xl font-bold cursor-pointer">
-            공유 공간 찾기
+            <Link to="/place/list">공유 공간 찾기</Link>
           </div>
         </div>
       </section>
