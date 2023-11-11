@@ -19,15 +19,14 @@ export default function MainPage() {
   const [data, setData] = useState();
 
   useEffect(() => {
+    ScrollOut({
+      once: true,
+      targets: "[data-scroll]",
+    });
     fetch(JSON_PATH.CARDS)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
-
-  ScrollOut({
-    once: true,
-    targets: "[data-scroll]",
-  });
 
   return (
     <main className="main flex-row lg:px-[13%]">
