@@ -14,7 +14,6 @@ const Layout = () => {
   }
   const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
   useEffect(() => {
-    console.log("렌더링!");
     const userInfo = getUserInfoFromLocalStorage();
     if (userInfo) {
       setIsLoggedIn(true);
